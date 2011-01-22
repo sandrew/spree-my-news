@@ -1,0 +1,5 @@
+<h2><%= @news_item.name %></h2>
+<p><i><%= @news_item.description %></i></p>
+<p><%=raw @news_item.content %></p>
+
+<%= link_to(t(:back), (params[:p] ? newsitems_path(:p => params[:p]) : newsitems_path)) %>

@@ -1,0 +1,45 @@
+<% content_for :head do %>
+
+  <%= javascript_include_tag 'wymeditor/jquery.wymeditor.js' %>
+
+  <script type="text/javascript" charset="utf-8">
+
+    var $j = jQuery.noConflict();
+    $j(function() {
+      $j('.wymeditor').wymeditor({
+        xhtmlParser: 'xhtml_parser.js',
+        cssParser:   'wym_css_parser.js',
+        stylesheet: '/stylesheets/static.css?v='+Math.random(),
+        containersItems: [
+          {'name': 'P', 'title': 'Paragraph', 'css': 'wym_containers_p'},
+          {'name': 'H1', 'title': 'Heading_1', 'css': 'wym_containers_h1'},
+          {'name': 'H2', 'title': 'Heading_2', 'css': 'wym_containers_h2'},
+          {'name': 'H3', 'title': 'Heading_3', 'css': 'wym_containers_h3'},
+          {'name': 'PRE', 'title': 'Preformatted', 'css': 'wym_containers_pre'},
+          {'name': 'BLOCKQUOTE', 'title': 'Blockquote', 'css': 'wym_containers_blockquote'},
+        ],
+        lang: '<%= I18n.locale.to_s.split("-").first %>'
+      });
+    });
+
+  </script>
+<% end %>
+
+<table class="admin-report" width="545">
+  <tr>
+    <td valign="top"><%=t("ext_my_news_title")%>:</td>
+    <td><%= f.text_field :name, {"style" => "width:500px"} %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t("ext_my_news_description")%>:</td>
+    <td><%= f.text_field :description, {"style" => "width:500px"} %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t("ext_my_news_permalink")%>:</td>
+    <td><%= f.text_field :permalink, {"style" => "width:500px"} %></td>
+  </tr>
+  <tr>
+    <td valign="top"><%=t("ext_my_news_content")%>:</td>
+    <td><%= f.text_area :content, {"style" => "width:500px", "class"=> "wymeditor"} %></td>
+  </tr>
+</table>

@@ -1,0 +1,10 @@
+---
+ru-RU:
+    news: "Новости"
+    ext_my_news_last_news: "Последние новости"
+    ext_my_news_new_item: Добавить новость
+    ext_my_news_title: Заголовок
+    ext_my_news_description: Краткое описание
+    ext_my_news_permalink: Ссылка(скоро)
+    ext_my_news_content: Содержание
+    ext_my_news_editing_item: Редактирование новости

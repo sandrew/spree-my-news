@@ -1,0 +1,36 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_product_link">
+      <%= button_link_to t("ext_my_news_new_item"),  new_object_url, {:icon => 'add'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%=t("news") %></h1>
+
+<table class="index">
+	<tr>
+		<th><%=t("ext_my_news_title")%></th>
+		<th><%=t("ext_my_news_description")%></th>
+		<th><%=t("action")%></th>
+  </tr>
+	<tbody>
+    	<% @newsitems.each do |news| %>
+		<tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id news %>">
+			<td>
+				<%= news.name %>
+			</td>
+			<td>
+				<%= news.description %>
+			</td>
+			<td>
+        <%= link_to_edit news %> &nbsp;
+        <%= link_to_delete news %>
+	    </td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

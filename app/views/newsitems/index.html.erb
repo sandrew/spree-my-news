@@ -1,0 +1,11 @@
+<h2><%= t(:ext_my_news_last_news) %></h2>
+<ul><% @news.each do |news| %><li>
+<div class='news_block'><div class='news_title'><%= l(news.created_at, :format => :long) %>
+<%= link_to news.name, newsitem_path(news, :p => @page), :class => 'news_title' %></div>
+<p class='news_description'><%= news.description %></p>
+</div></li>
+<% end %></ul>
+Страницы: <% (1..@page).each do |p| %>
+	<%= if @page != p then link_to p.to_s, newsitems_path(:p => p) else p end %>&nbsp;
+<% end %>
+<br />
