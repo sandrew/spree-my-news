@@ -1,13 +1,15 @@
 SpreeMyNews
 ===========
 
-Introduction goes here.
+This is very simple module for adding news to site on Spree CMS. 
+Permalinks, documentation and test will be later.
 
 
-Example
+Installation
 =======
 
-Example goes here.
+rake spree_my_news:intall
+rake db:migrate
 
 
-Copyright (c) 2011 [name of extension creator], released under the New BSD License
+Copyright (c) 2011 Andrew Shaydurov, released under the New BSD License
